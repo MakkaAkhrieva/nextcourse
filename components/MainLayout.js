@@ -10,14 +10,14 @@ export function MainLayout({ children, title = "Next app" }) {
         <title>{title} | Next Course</title>
       </Head>
       <nav>
-        <Link className="link" href={"/"}>
-          Home
+        <Link className="link" href={"/"} legacyBehavior>
+          <a>Home</a>
         </Link>
-        <Link className="link" href={"/about"}>
-          About
+        <Link className="link" href={"/about"} legacyBehavior>
+          <a>About</a>
         </Link>
-        <Link className="link" href={"/posts"}>
-          Posts
+        <Link href={"/posts"} legacyBehavior>
+          <a>Posts</a>
         </Link>
       </nav>
       <main>{children}</main>
@@ -30,11 +30,10 @@ export function MainLayout({ children, title = "Next app" }) {
           background: darkblue;
           top: 0;
           display: flex;
-          jisify-content: space-around;
+          justify-content: space-around;
           align-items: center;
         }
-        nav a {
-          display: block;
+        a {
           color: #fff;
           text-decoration: none;
         }
